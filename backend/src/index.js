@@ -39,7 +39,7 @@ const resolvers = {
       const count = pokemons.length;
       const edges = pokemons.slice(offset, offset + limit);
 
-      if(offset || search) {
+      if(offset || search || filter?.type || filter?.isFavorite) {
         await new Promise((resolve) => setTimeout(resolve, 1000))
       }
 

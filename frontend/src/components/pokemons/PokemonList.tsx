@@ -1,6 +1,6 @@
 import InfiniteScroll from 'react-infinite-scroll-component';
 
-import { Grid, styled } from '@mui/material';
+import { Grid, styled, css } from '@mui/material';
 
 import { Pokemon } from '../../api';
 
@@ -12,9 +12,13 @@ const StyledInfiniteScroll = styled(InfiniteScroll)`
 `;
 
 const StyledGridContainer = styled(Grid)<{ loading?: boolean }>`
-  opacity: ${({ loading }) => (loading ? 0.5 : 1)};
   transition: opacity 0.2s linear;
   transition-delay: 0.2;
+
+  ${({loading}) => loading && css`
+    opacity: 0.5;
+    pointer-events: none;
+  `}
 `;
 
 export type PokemonSummary = Pick<Pokemon, 'id' | 'name' | 'image' | 'types' | 'isFavorite'>;
