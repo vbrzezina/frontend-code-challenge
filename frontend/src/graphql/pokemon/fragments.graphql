@@ -1,0 +1,50 @@
+fragment Attack on Attack {
+  damage
+  name
+  type
+}
+
+fragment Dimension on PokemonDimension {
+  maximum
+  minimum
+}
+
+fragment FullPokemon on Pokemon {
+  id
+  name
+  attacks {
+    fast {
+      ...Attack
+    }
+    special {
+      ...Attack
+    }
+  }
+  maxHP
+  number
+  resistant
+  sound
+  types
+  weaknesses
+  weight {
+    ...Dimension
+  }
+  height {
+    ...Dimension
+  }
+  classification
+  fleeRate
+  image
+  isFavorite
+  maxCP
+  evolutionRequirements {
+    amount
+    name
+  }
+  evolutions {
+    id
+    name
+    image
+    isFavorite
+  }
+}

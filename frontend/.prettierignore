@@ -1,0 +1,7 @@
+src/api
+node_modules
+public
+.cache
+.husky
+.vscode
+.next

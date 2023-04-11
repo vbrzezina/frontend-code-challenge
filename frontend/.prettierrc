@@ -1,0 +1,23 @@
+{
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "singleQuote": true,
+  "printWidth": 100,
+  "importOrder": [
+    "^(http|url|querystring|path|fs|util)$",
+    "^typeface(.*)$",
+    "^(?![/.@])(.*)$",
+    "^@carbon.*$",
+    "^@apollo.*$",
+    "^@.*$",
+    "^[./](.*api)",
+    "^[./](.*pages)",
+    "^[./](.*(components|hooks))",
+    "^[./](.*styles)",
+    "^[./](.*assets)",
+    "^[./](?!.*(styles|assets|api|components|pages))"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "importOrderCaseInsensitive": true,
+  "importOrderParserPlugins": ["typescript", "jsx", "classProperties", "decorators-legacy"]
+}

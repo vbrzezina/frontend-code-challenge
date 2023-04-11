@@ -1,0 +1,28 @@
+query GetPokemonsList($query: PokemonsQueryInput!) {
+  pokemons(query: $query) {
+    count
+    limit
+    offset
+    edges {
+      id
+      name
+      image
+      types
+      isFavorite
+    }
+  }
+}
+
+query GetAllPokemonNames {
+  pokemonNames
+}
+
+query GetAllPokemonTypes {
+  pokemonTypes
+}
+
+query GetPokemon($name: String!) {
+  pokemonByName(name: $name) {
+    ...FullPokemon
+  }
+}
